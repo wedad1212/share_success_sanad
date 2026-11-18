@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سند الشباب | شارك قصة النجاح</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ========== الصفحة الرئيسية: الشعار + العنوان + الزر + النمط ========== -->
+  <header class="top">
+    <div class="wrap bar">
+      <div class="logo"><img src="images/logo.svg" alt="سند الشباب"></div>
+    </div>
+
+    <div class="wrap hero">
+      <div class="txt">
+        <h1>قصتك بتفرق مع غيرك</h1>
+        <p class="lead">إذا كنت من مستفيدي سند، خبّرنا كيف كانت رحلتك وشو تغيّر. قصتك بتلهم شب أو شابة غيرك يبدأ.</p>
+        <button type="button" class="btn" id="open">شارك قصة النجاح</button>
+      </div>
+      <div class="art" aria-hidden="true"></div>
+    </div>
+  </header>
+
+
+  <!-- ========== الفورم (مخفي لحد ما المستفيد يضغط على الزر) ========== -->
+  <main id="share" hidden>
+    <div class="wrap narrow">
+      <h2 class="sec">شارك قصة نجاحك</h2>
+      <p class="sub">خطوتين بسيطات، وقصتك بتوصل لفريق سند.</p>
+
+      <form id="f" novalidate>
+
+        <!-- الخطوة 1: المعلومات الشخصية -->
+        <section class="card">
+          <div class="ch">
+            <i class="num">1</i>
+            <div><h3>عرّفنا عليك</h3><p>معلوماتك بتساعدنا نتواصل معك.</p></div>
+          </div>
+
+          <div class="grid">
+          <div class="full">
+            <label for="name">الاسم الثلاثي</label>
+            <div class="in">
+              <img class="ic" src="images/icon-user.svg" alt="">
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="مثال: أحمد محمد العلي" required>
+            </div>
+          </div>
+          <div>
+            <label for="phone">رقم الموبايل</label>
+            <div class="in">
+              <img class="ic" src="images/icon-phone.svg" alt="">
+              <input id="phone" name="phone" type="tel" inputmode="tel" dir="ltr" autocomplete="tel" placeholder="09xx xxx xxx" required>
+            </div>
+          </div>
+          <div>
+            <label for="city">المدينة</label>
+            <div class="in">
+              <img class="ic" src="images/icon-pin.svg" alt="">
+              <input id="city" name="city" type="text" placeholder="مثال: دمشق" required>
+            </div>
+          </div>
+          <div class="full">
+            <label for="social">رابط حسابك على السوشال ميديا</label>
+            <div class="in">
+              <img class="ic" src="images/icon-link.svg" alt="">
+              <input id="social" name="social" type="url" dir="ltr" placeholder="https://" required>
+            </div>
+            <p class="hint">فيسبوك أو انستغرام أو لينكد ان</p>
+          </div>
+          <div class="full">
+            <label for="project">اسم المشروع يلي شاركت فيه</label>
+            <div class="in">
+              <img class="ic" src="images/icon-project.svg" alt="">
+              <input id="project" name="project" type="text" placeholder="اسم البرنامج أو المشروع" required>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        <!-- الخطوة 2: القصة -->
+        <section class="card">
+          <div class="ch">
+            <i class="num">2</i>
+            <div><h3>رحلتك مع سند الشباب</h3><p>احكي بكلماتك، مهما كانت القصة بسيطة.</p></div>
+          </div>
+
+          <label for="story">خبّرنا شو التحدي يلي كنت عم تواجهو؟ وكيف قدرنا نكون سندك فيه؟ وهل هالتغيير وصلك لهدفك ورؤيتك؟</label>
+          <textarea id="story" name="story" maxlength="1500" required></textarea>
+          <div class="count"><span id="n">0</span> / 1500</div>
+        </section>
+
+ 
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn send" id="send" type="submit">أرسل قصتي</button>
+      </form>
+
+      <!-- رسالة الشكر بعد الإرسال -->
+      <div class="ok" id="ok" role="status">
+        <strong>وصلتنا قصتك. شكراً لمشاركتك!</strong>
+        <span>رح نتواصل معك على رقم الموبايل إذا احتجنا شي.</span>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ========== الفوتر (مخفي مثل الفورم) ========== -->
+  <footer id="foot" hidden>
+    <div class="wrap foot">
+      <div class="logo small"><img src="images/logo.svg" alt="سند الشباب"></div>
+      <a href="mailto:info@sanadyouth.org">info@sanadyouth.org</a>
+    </div>
+  </footer>
+
+</body>
+</html>

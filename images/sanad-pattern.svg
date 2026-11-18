@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <!-- نمط سند الهندسي: 4 أعمدة × 5 صفوف، كل مربع 100×100 -->
+
+  <!-- صف 1 / عمود 1 -->
+  <g transform="translate(0 0)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 100A50 50 0 0 1 100 100Z" fill="#00c8c8"/>
+    </g>
+  </g>
+
+  <!-- صف 1 / عمود 2 -->
+  <g transform="translate(100 0)">
+    <rect width="100" height="100" fill="#ffffff" stroke="#ffffff" stroke-width="1.2"/>
+    <g transform="rotate(90 50 50)">
+      <circle cx="50" cy="50" r="34" fill="#4030d0"/>
+    </g>
+  </g>
+
+  <!-- صف 1 / عمود 3 -->
+  <g transform="translate(200 0)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#a8317f"/>
+    </g>
+  </g>
+
+  <!-- صف 1 / عمود 4 -->
+  <g transform="translate(300 0)">
+    <rect width="100" height="100" fill="#00c8c8" stroke="#00c8c8" stroke-width="1.2"/>
+    <g transform="rotate(90 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#0e065a"/>
+    </g>
+  </g>
+
+  <!-- صف 2 / عمود 1 -->
+  <g transform="translate(0 100)">
+    <rect width="100" height="100" fill="#a8317f" stroke="#a8317f" stroke-width="1.2"/>
+    <g transform="rotate(270 50 50)">
+      <path d="M0 100A50 50 0 0 1 100 100Z" fill="#00c8c8"/>
+    </g>
+  </g>
+
+  <!-- صف 2 / عمود 2 -->
+  <g transform="translate(100 100)">
+    <rect width="100" height="100" fill="#00c8c8" stroke="#00c8c8" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#0e065a"/>
+    </g>
+  </g>
+
+  <!-- صف 2 / عمود 3 -->
+  <g transform="translate(200 100)">
+    <rect width="100" height="100" fill="#ffffff" stroke="#ffffff" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 0H100A50 50 0 0 1 0 0Z" fill="#0e065a"/>
+    </g>
+  </g>
+
+  <!-- صف 2 / عمود 4 -->
+  <g transform="translate(300 100)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(0 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#ffbe00"/>
+    </g>
+  </g>
+
+  <!-- صف 3 / عمود 1 -->
+  <g transform="translate(0 200)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 0H100A50 50 0 0 1 0 0Z" fill="#ffbe00"/>
+    </g>
+  </g>
+
+  <!-- صف 3 / عمود 2 -->
+  <g transform="translate(100 200)">
+    <rect width="100" height="100" fill="#4030d0" stroke="#4030d0" stroke-width="1.2"/>
+    <g transform="rotate(90 50 50)">
+      <path d="M0 0H100A50 50 0 0 1 0 0Z" fill="#ffbe00"/>
+    </g>
+  </g>
+
+  <!-- صف 3 / عمود 3 -->
+  <g transform="translate(200 200)">
+    <rect width="100" height="100" fill="#ffbe00" stroke="#ffbe00" stroke-width="1.2"/>
+    <g transform="rotate(90 50 50)">
+      <circle cx="50" cy="50" r="34" fill="#a8317f"/>
+    </g>
+  </g>
+
+  <!-- صف 3 / عمود 4 -->
+  <g transform="translate(300 200)">
+    <rect width="100" height="100" fill="#00c8c8" stroke="#00c8c8" stroke-width="1.2"/>
+    <g transform="rotate(0 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#a8317f"/>
+    </g>
+  </g>
+
+  <!-- صف 4 / عمود 1 -->
+  <g transform="translate(0 300)">
+    <rect width="100" height="100" fill="#ffffff" stroke="#ffffff" stroke-width="1.2"/>
+    <g transform="rotate(90 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#0e065a"/>
+      <path d="M0 0H50A50 50 0 0 1 0 50Z" fill="#a8317f"/>
+    </g>
+  </g>
+
+  <!-- صف 4 / عمود 2 -->
+  <g transform="translate(100 300)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 0H100L0 100Z" fill="#00c8c8"/>
+    </g>
+  </g>
+
+  <!-- صف 4 / عمود 3 -->
+  <g transform="translate(200 300)">
+    <rect width="100" height="100" fill="#ffffff" stroke="#ffffff" stroke-width="1.2"/>
+    <g transform="rotate(270 50 50)">
+      <path d="M0 0H100L0 100Z" fill="#00c8c8"/>
+    </g>
+  </g>
+
+  <!-- صف 4 / عمود 4 -->
+  <g transform="translate(300 300)">
+    <rect width="100" height="100" fill="#4030d0" stroke="#4030d0" stroke-width="1.2"/>
+    <g transform="rotate(0 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- صف 5 / عمود 1 -->
+  <g transform="translate(0 400)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(270 50 50)">
+      <path d="M0 0H100A100 100 0 0 1 0 100Z" fill="#ffbe00"/>
+    </g>
+  </g>
+
+  <!-- صف 5 / عمود 2 -->
+  <g transform="translate(100 400)">
+    <rect width="100" height="100" fill="#ffffff" stroke="#ffffff" stroke-width="1.2"/>
+    <g transform="rotate(0 50 50)">
+      <path d="M0 0H100L0 100Z" fill="#4030d0"/>
+    </g>
+  </g>
+
+  <!-- صف 5 / عمود 3 -->
+  <g transform="translate(200 400)">
+    <rect width="100" height="100" fill="#0e065a" stroke="#0e065a" stroke-width="1.2"/>
+    <g transform="rotate(180 50 50)">
+      <path d="M0 0H100L0 100Z" fill="#ffbe00"/>
+    </g>
+  </g>
+
+  <!-- صف 5 / عمود 4 -->
+  <g transform="translate(300 400)">
+    <rect width="100" height="100" fill="#00c8c8" stroke="#00c8c8" stroke-width="1.2"/>
+    <g transform="rotate(0 50 50)">
+      <circle cx="50" cy="50" r="50" fill="#4030d0"/>
+    </g>
+  </g>
+</svg>
