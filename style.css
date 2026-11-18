@@ -79,10 +79,102 @@ h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.35;margin:0 0 16px;font-weig
   background-position: center;
   background-size: contain;
 }
-@media (max-width:760px) {
+@media (max-width: 760px) {
+  body {
+      overflow-x: hidden;
+  }
+
+  .top {
+      min-height: 100svh;
+  }
+
+  .bar {
+      padding-top: 22px;
+      padding-bottom: 10px;
+  }
+
+  .logo img {
+      height: 64px;
+  }
+
+  .hero {
+      display: block;
+      position: relative;
+      min-height: 620px;
+      padding-top: 0;
+  }
+
   .art {
-      min-height: 260px;
-      background-size: contain;
+      position: absolute;
+      left: -35px;
+      top: 100px;
+      width: 145px;
+      height: 340px;
+      min-height: 0;
+      background-size: 260px 350px;
+      background-position: left center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+  }
+
+  .txt {
+      position: relative;
+      z-index: 1;
+      width: 78%;
+      margin-left: 0;
+      margin-right: auto;
+      padding: 125px 0 50px;
+  }
+
+  h1 {
+      font-size: clamp(1.8rem, 7vw, 2.3rem);
+  }
+
+  .lead {
+      font-size: 1rem;
+  }
+
+  .btn {
+      font-size: 1rem;
+      padding: 12px 26px;
+  }
+
+  .grid {
+      grid-template-columns: 1fr;
+  }
+
+  .card {
+      padding: 22px 18px;
+  }
+}
+@media (max-width: 760px) {
+  #share {
+      width: 100%;
+      padding: 42px 0 60px;
+  }
+
+  #share .wrap {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding-inline: 18px;
+      margin-inline: auto;
+  }
+
+  .card,
+  .grid,
+  .full,
+  .in {
+      min-width: 0;
+      width: 100%;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+      width: 100%;
+      min-width: 0;
   }
 }
 
@@ -130,13 +222,129 @@ footer{background:var(--navy);color:#dcd8ff}
 .logo.small img{height:52px}
 footer a{color:#fff}
 
-@media (max-width:760px){
-  .hero{grid-template-columns:1fr;gap:0}
-  .art{order:-1;aspect-ratio:2/1;margin-inline:-24px}
-  .txt{padding:32px 0 44px}
-  .logo img{height:64px}
-  .grid{grid-template-columns:1fr}
-  .stats ul{grid-template-columns:1fr 1fr}
-  .card{padding:22px 18px}
-}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Mobile Layout */
+@media (max-width: 760px) {
+
+  body {
+      overflow-x: hidden;
+  }
+
+  .top {
+      min-height: 100svh;
+  }
+
+  .bar {
+      padding: 20px 20px 12px;
+  }
+
+  .logo img {
+      height: 62px;
+  }
+
+  /* النص والزخرفة بجانب بعض */
+  .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 105px;
+      gap: 12px;
+      align-items: center;
+      min-height: 580px;
+      padding-inline: 18px;
+  }
+
+  .txt {
+      width: 100%;
+      margin: 0;
+      padding: 30px 0;
+      min-width: 0;
+  }
+
+  .art {
+      position: relative;
+      width: 105px;
+      height: 310px;
+      min-height: 0;
+      background-image: url("images/sanad-pattern.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto 310px;
+      margin: 0;
+  }
+
+  h1 {
+      font-size: clamp(1.7rem, 7vw, 2.1rem);
+      line-height: 1.4;
+  }
+
+  .lead {
+      font-size: .95rem;
+      line-height: 1.9;
+      margin-bottom: 24px;
+  }
+
+  .btn {
+      font-size: .95rem;
+      padding: 12px 22px;
+  }
+
+  /* الفورم */
+  #share {
+      width: 100%;
+      padding: 38px 0 60px;
+  }
+
+  #share .wrap {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 18px;
+      margin: 0 auto;
+  }
+
+  .grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+  }
+
+  .card {
+      width: 100%;
+      padding: 22px 18px;
+  }
+
+  .full,
+  .in {
+      width: 100%;
+      min-width: 0;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+      width: 100%;
+      min-width: 0;
+  }
+
+  .foot {
+      padding-top: 24px;
+      padding-bottom: 24px;
+  }
+}
+
+/* الشاشات الصغيرة جداً */
+@media (max-width: 380px) {
+  .hero {
+      grid-template-columns: minmax(0, 1fr) 78px;
+      gap: 8px;
+  }
+
+  .art {
+      width: 78px;
+      background-size: auto 270px;
+  }
+
+  h1 {
+      font-size: 1.6rem;
+  }
+}
