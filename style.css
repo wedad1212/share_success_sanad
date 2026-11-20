@@ -1,206 +1,72 @@
-/* ألوان هوية سند */
-/* Madani Arabic Font Family */
+/* ===== خط مدني (Madani) ===== */
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic Thin 400.ttf') format('truetype');font-weight:100;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic ExtraLight 400.ttf') format('truetype');font-weight:200;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic Light 400.ttf') format('truetype');font-weight:300;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic Regular 400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic Medium 400.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic SemiBold 400.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic Bold 400.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic ExtraBold 400.ttf') format('truetype');font-weight:800;font-display:swap}
+@font-face{font-family:'Madani';src:url('fonts/Madani Arabic Black 400.ttf') format('truetype');font-weight:900;font-display:swap}
 
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic Thin 400.ttf') format('truetype');
-  font-weight: 100;
+/* ===== ألوان هوية سند ===== */
+:root{
+  --navy:#0e065a; --blue:#4030d0; --magenta:#a8317f; --teal:#00c8c8; --yellow:#ffbe00;
+  --bg:#f4f3fb; --card:#fff; --text:#0e065a; --muted:#55527f; --line:#d6d2f0; --field:#f4f3fb;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0a0436; --card:#15106b; --text:#f3f1ff; --muted:#b9b5ec; --line:#3a33a0; --field:#0e0a52}
 }
 
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic ExtraLight 400.ttf') format('truetype');
-  font-weight: 200;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic Light 400.ttf') format('truetype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic Regular 400.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic Medium 400.ttf') format('truetype');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic SemiBold 400.ttf') format('truetype');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic Bold 400.ttf') format('truetype');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic ExtraBold 400.ttf') format('truetype');
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: 'Madani';
-  src: url('fonts/Madani Arabic Black 400.ttf') format('truetype');
-  font-weight: 900;
-}
-:root{--navy:#0e065a;--blue:#4030d0;--magenta:#a8317f;--teal:#00c8c8;--yellow:#ffbe00;
-  --bg:#f4f3fb;--card:#fff;--text:#0e065a;--muted:#55527f;--line:#d6d2f0;--field:#f4f3fb}
-@media (prefers-color-scheme:dark){:root{--bg:#0a0436;--card:#15106b;--text:#f3f1ff;--muted:#b9b5ec;--line:#3a33a0;--field:#0e0a52}}
+/* ===== أساسيات ===== */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--navy)}
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--text);font-family: 'Madani', Tahoma, Arial, sans-serif;font-size:1rem;line-height:1.75}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;
+  background:var(--bg);color:var(--text);font-family:'Madani',Tahoma,Arial,sans-serif;font-size:1rem;line-height:1.75}
 .wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 24px}
 .narrow{max-width:720px}
 
-/* القسم الأول */
-.top{background:var(--navy);color:#fff;min-height:100vh;display:flex;flex-direction:column}
+/* ===== الصفحة الرئيسية (كمبيوتر) ===== */
+.top{background:var(--navy);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 .bar{padding-top:28px;padding-bottom:28px}
 .logo img{height:76px;width:auto;display:block}
-.hero{flex:1;width:100%;display:grid;grid-template-columns:1fr minmax(280px,42%);gap:48px;align-items:center}
+
+.hero{flex:1;display:grid;grid-template-columns:1fr minmax(280px,42%);gap:48px;align-items:center}
 .txt{padding:24px 0 48px}
 h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.35;margin:0 0 16px;font-weight:700}
 .lead{font-weight:300;font-size:1.1rem;max-width:36ch;margin:0 0 30px;color:#dcd8ff}
 
-.art {
-  min-height: 420px;
-  background-image: url("images/sanad-pattern.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-@media (max-width: 760px) {
-  body {
-      overflow-x: hidden;
-  }
+/* النمط الهندسي: 4 أعمدة × 5 صفوف، بيظهر كامل بمربعات سليمة */
+.art{aspect-ratio:4/5;background:url("images/sanad-pattern.svg") center top / cover no-repeat}
 
-  .top {
-      min-height: 100svh;
-  }
-
-  .bar {
-      padding-top: 22px;
-      padding-bottom: 10px;
-  }
-
-  .logo img {
-      height: 64px;
-  }
-
-  .hero {
-      display: block;
-      position: relative;
-      min-height: 620px;
-      padding-top: 0;
-  }
-
-  .art {
-      position: absolute;
-      left: -35px;
-      top: 100px;
-      width: 145px;
-      height: 340px;
-      min-height: 0;
-      background-size: 260px 350px;
-      background-position: left center;
-      background-repeat: no-repeat;
-      pointer-events: none;
-  }
-
-  .txt {
-      position: relative;
-      z-index: 1;
-      width: 78%;
-      margin-left: 0;
-      margin-right: auto;
-      padding: 125px 0 50px;
-  }
-
-  h1 {
-      font-size: clamp(1.8rem, 7vw, 2.3rem);
-  }
-
-  .lead {
-      font-size: 1rem;
-  }
-
-  .btn {
-      font-size: 1rem;
-      padding: 12px 26px;
-  }
-
-  .grid {
-      grid-template-columns: 1fr;
-  }
-
-  .card {
-      padding: 22px 18px;
-  }
-}
-@media (max-width: 760px) {
-  #share {
-      width: 100%;
-      padding: 42px 0 60px;
-  }
-
-  #share .wrap {
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
-      padding-inline: 18px;
-      margin-inline: auto;
-  }
-
-  .card,
-  .grid,
-  .full,
-  .in {
-      min-width: 0;
-      width: 100%;
-  }
-
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  textarea {
-      width: 100%;
-      min-width: 0;
-  }
-}
-
-
-.btn{font:inherit;font-weight:600;font-size:1.05rem;background:var(--yellow);color:var(--navy);border:0;border-radius:999px;padding:13px 34px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
+/* ===== الأزرار ===== */
+.btn{font:inherit;font-weight:600;font-size:1.05rem;background:var(--yellow);color:var(--navy);border:0;border-radius:999px;
+  padding:13px 34px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
 .btn:hover{background:var(--teal)}
 .btn:disabled{opacity:.6;cursor:wait}
 .btn.send{background:var(--blue);color:#fff;padding:14px 44px}
 .btn.send:hover{background:var(--magenta)}
 :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 
-/* الفورم */
+/* ===== الفورم ===== */
 #share{padding:64px 0 88px}
 #share[hidden]{display:none}
+.sec{font-size:1.5rem;margin:0 0 20px}
 .sub{color:var(--muted);margin:-12px 0 28px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:20px}
 .ch{display:flex;gap:16px;align-items:center;margin-bottom:24px}
 .ch h3{margin:0;font-size:1.2rem;line-height:1.4}
 .ch p{margin:0;color:var(--muted);font-size:.92rem}
-.num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--yellow);font-style:normal;font-weight:700;display:grid;place-items:center;font-size:1.1rem}
+.num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--yellow);font-style:normal;font-weight:700;
+  display:grid;place-items:center;font-size:1.1rem}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid>*{min-width:0}
 .full{grid-column:1/-1}
 label{display:block;font-weight:600;font-size:.95rem;margin-bottom:8px}
 .in{position:relative}
 .ic{position:absolute;inset-inline-start:14px;top:50%;translate:0 -50%;width:20px;height:20px;pointer-events:none}
-input[type=text],input[type=tel],input[type=url],textarea{width:100%;font:inherit;color:var(--text);background:var(--field);border:2px solid transparent;border-radius:12px;padding:0 16px;height:52px;transition:border-color .2s,background .2s}
+input[type=text],input[type=tel],input[type=url],textarea{width:100%;min-width:0;font:inherit;color:var(--text);background:var(--field);
+  border:2px solid transparent;border-radius:12px;padding:0 16px;height:52px;transition:border-color .2s}
 .in input{padding-inline-start:46px}
 .in input[dir=ltr]{text-align:right;padding-inline-start:16px;padding-inline-end:46px}
 input::placeholder,textarea::placeholder{color:var(--muted);opacity:.6}
@@ -209,142 +75,48 @@ input:focus,textarea:focus{border-color:var(--blue);outline:none}
 textarea{height:200px;padding:14px 16px;resize:vertical;margin-top:4px}
 .count{text-align:end;color:var(--muted);font-size:.85rem;margin-top:6px}
 .hint{color:var(--muted);font-size:.85rem;margin:6px 0 0}
-.consent{display:flex;gap:14px;align-items:flex-start;font-weight:400;margin:28px 0 8px;cursor:pointer}
-.consent input{width:22px;height:22px;margin-top:5px;accent-color:var(--blue);flex:none}
 .err{color:#d4204a;font-weight:600;min-height:1.8em;margin:0 0 8px}
 .ok{display:none;border-inline-start:8px solid var(--teal);background:var(--card);border-radius:12px;padding:24px 28px}
 .ok.show{display:block}
 .ok strong{display:block;font-size:1.25rem}
 
+/* ===== الفوتر ===== */
 footer[hidden]{display:none}
 footer{background:var(--navy);color:#dcd8ff}
 .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;padding-bottom:32px}
 .logo.small img{height:52px}
 footer a{color:#fff}
 
-
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* Mobile Layout */
-@media (max-width: 760px) {
 
-  body {
-      overflow-x: hidden;
-  }
+/* =====================================================
+   الجوال (أقل من 760px): كل شي بعمود واحد
+   ترتيب الصفحة: الشعار ← النص والزر ← النمط بعرض الشاشة كامل
+   ===================================================== */
+@media (max-width:760px){
+  .bar{padding-top:20px;padding-bottom:14px}
+  .logo img{height:60px}
 
-  .top {
-      min-height: 100svh;
-  }
+  .hero{display:flex;flex-direction:column;gap:0;padding:0}
+  .txt{flex:1;display:flex;flex-direction:column;justify-content:center;padding:28px 24px 36px}
+  h1{font-size:clamp(1.8rem,8vw,2.3rem);margin-bottom:12px}
+  .lead{font-size:1rem;line-height:1.9;margin-bottom:26px}
+  .btn{width:100%;max-width:340px;text-align:center}
 
-  .bar {
-      padding: 20px 20px 12px;
-  }
+  /* ثلاث صفوف كاملة من النمط (4×3)، من حافة الشاشة للحافة */
+  .art{flex:none;width:100%;aspect-ratio:4/3}
 
-  .logo img {
-      height: 62px;
-  }
-
-  /* النص والزخرفة بجانب بعض */
-  .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 105px;
-      gap: 12px;
-      align-items: center;
-      min-height: 580px;
-      padding-inline: 18px;
-  }
-
-  .txt {
-      width: 100%;
-      margin: 0;
-      padding: 30px 0;
-      min-width: 0;
-  }
-
-  .art {
-      position: relative;
-      width: 105px;
-      height: 310px;
-      min-height: 0;
-      background-image: url("images/sanad-pattern.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto 310px;
-      margin: 0;
-  }
-
-  h1 {
-      font-size: clamp(1.7rem, 7vw, 2.1rem);
-      line-height: 1.4;
-  }
-
-  .lead {
-      font-size: .95rem;
-      line-height: 1.9;
-      margin-bottom: 24px;
-  }
-
-  .btn {
-      font-size: .95rem;
-      padding: 12px 22px;
-  }
-
-  /* الفورم */
-  #share {
-      width: 100%;
-      padding: 38px 0 60px;
-  }
-
-  #share .wrap {
-      width: 100%;
-      max-width: 100%;
-      padding: 0 18px;
-      margin: 0 auto;
-  }
-
-  .grid {
-      grid-template-columns: 1fr;
-      gap: 18px;
-  }
-
-  .card {
-      width: 100%;
-      padding: 22px 18px;
-  }
-
-  .full,
-  .in {
-      width: 100%;
-      min-width: 0;
-  }
-
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  textarea {
-      width: 100%;
-      min-width: 0;
-  }
-
-  .foot {
-      padding-top: 24px;
-      padding-bottom: 24px;
-  }
+  #share{padding:40px 0 56px}
+  #share .wrap{padding:0 16px}
+  .grid{grid-template-columns:1fr;gap:18px}
+  .card{padding:22px 16px}
+  .btn.send{width:100%}
+  .foot{justify-content:center;padding-top:24px;padding-bottom:24px}
 }
 
 /* الشاشات الصغيرة جداً */
-@media (max-width: 380px) {
-  .hero {
-      grid-template-columns: minmax(0, 1fr) 78px;
-      gap: 8px;
-  }
-
-  .art {
-      width: 78px;
-      background-size: auto 270px;
-  }
-
-  h1 {
-      font-size: 1.6rem;
-  }
+@media (max-width:360px){
+  .txt{padding-inline:18px}
+  h1{font-size:1.65rem}
 }

@@ -31,10 +31,10 @@ f.addEventListener("submit", function (e) {
     if (!fields[i].value.trim()) { fail(fields[i], "عبّي كل الحقول لو سمحت."); return; }
   }
   if (!f.social.checkValidity()) { fail(f.social, "الرابط لازم يبدأ بـ https://"); return; }
-  if (!f.consent.checked) { fail(f.consent, "لازم توافق على النشر والتواصل حتى نقدر نستلم قصتك."); return; }
+  // خانة الموافقة اختيارية: إذا مو موجودة بالـ HTML ما في تحقق منها
+  if (f.consent && !f.consent.checked) { fail(f.consent, "لازم توافق على النشر والتواصل حتى نقدر نستلم قصتك."); return; }
 
   var data = Object.fromEntries(new FormData(f).entries());
-  data.consent = true;
   btn.disabled = true;
 
   function done() {
