@@ -76,9 +76,12 @@ textarea{height:200px;padding:14px 16px;resize:vertical;margin-top:4px}
 .count{text-align:end;color:var(--muted);font-size:.85rem;margin-top:6px}
 .hint{color:var(--muted);font-size:.85rem;margin:6px 0 0}
 .err{color:#d4204a;font-weight:600;min-height:1.8em;margin:0 0 8px}
-.ok{display:none;border-inline-start:8px solid var(--teal);background:var(--card);border-radius:12px;padding:24px 28px}
-.ok.show{display:block}
-.ok strong{display:block;font-size:1.25rem}
+/* ===== شاشة الشكر ===== */
+.thanks{flex:1;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:32px 24px;background:var(--navy);color:#fff}
+.thanks[hidden]{display:none}
+.check{width:96px;height:96px}
+.thanks h2{font-size:clamp(1.6rem,6vw,2.4rem);margin:22px 0 10px}
+.thanks p{margin:0;color:#dcd8ff}
 
 /* الفوتر */
 footer[hidden]{display:none}

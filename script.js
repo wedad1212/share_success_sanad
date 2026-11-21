@@ -36,10 +36,12 @@ f.addEventListener("submit", function (e) {
   btn.disabled = true;
 
   function done() {
-    f.style.display = "none";
-    var ok = document.getElementById("ok");
-    ok.classList.add("show");
-    ok.scrollIntoView();
+    // بعد الإرسال: بنخفي كل شي وبنظهر شاشة الشكر بس
+    document.querySelector(".top").style.display = "none";
+    document.getElementById("share").style.display = "none";
+    document.getElementById("foot").style.display = "none";
+    document.getElementById("thanks").hidden = false;
+    window.scrollTo(0, 0);
   }
 
   if (!ENDPOINT) { done(); return; } // وضع التجربة
