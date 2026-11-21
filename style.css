@@ -1,4 +1,4 @@
-/* ===== خط مدني (Madani) ===== */
+/* Madani تعريف */
 @font-face{font-family:'Madani';src:url('fonts/Madani Arabic Thin 400.ttf') format('truetype');font-weight:100;font-display:swap}
 @font-face{font-family:'Madani';src:url('fonts/Madani Arabic ExtraLight 400.ttf') format('truetype');font-weight:200;font-display:swap}
 @font-face{font-family:'Madani';src:url('fonts/Madani Arabic Light 400.ttf') format('truetype');font-weight:300;font-display:swap}
@@ -9,7 +9,7 @@
 @font-face{font-family:'Madani';src:url('fonts/Madani Arabic ExtraBold 400.ttf') format('truetype');font-weight:800;font-display:swap}
 @font-face{font-family:'Madani';src:url('fonts/Madani Arabic Black 400.ttf') format('truetype');font-weight:900;font-display:swap}
 
-/* ===== ألوان هوية سند ===== */
+/*ألوان هوية سند */
 :root{
   --navy:#0e065a; --blue:#4030d0; --magenta:#a8317f; --teal:#00c8c8; --yellow:#ffbe00;
   --bg:#f4f3fb; --card:#fff; --text:#0e065a; --muted:#55527f; --line:#d6d2f0; --field:#f4f3fb;
@@ -18,7 +18,7 @@
   :root{--bg:#0a0436; --card:#15106b; --text:#f3f1ff; --muted:#b9b5ec; --line:#3a33a0; --field:#0e0a52}
 }
 
-/* ===== أساسيات ===== */
+/* أساسيات */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--navy)}
 body{margin:0;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;
@@ -26,7 +26,7 @@ body{margin:0;min-height:100vh;display:flex;flex-direction:column;overflow-x:hid
 .wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 24px}
 .narrow{max-width:720px}
 
-/* ===== الصفحة الرئيسية (كمبيوتر) ===== */
+/* الصفحة الرئيسية (كمبيوتر) */
 .top{background:var(--navy);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 .bar{padding-top:28px;padding-bottom:28px}
 .logo img{height:76px;width:auto;display:block}
@@ -39,7 +39,7 @@ h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.35;margin:0 0 16px;font-weig
 /* النمط الهندسي: 4 أعمدة × 5 صفوف، بيظهر كامل بمربعات سليمة */
 .art{aspect-ratio:4/5;background:url("images/sanad-pattern.svg") center top / cover no-repeat}
 
-/* ===== الأزرار ===== */
+/* الأزرار */
 .btn{font:inherit;font-weight:600;font-size:1.05rem;background:var(--yellow);color:var(--navy);border:0;border-radius:999px;
   padding:13px 34px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
 .btn:hover{background:var(--teal)}
@@ -48,7 +48,7 @@ h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.35;margin:0 0 16px;font-weig
 .btn.send:hover{background:var(--magenta)}
 :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 
-/* ===== الفورم ===== */
+/* الفورم */
 #share{padding:64px 0 88px}
 #share[hidden]{display:none}
 .sec{font-size:1.5rem;margin:0 0 20px}
@@ -80,7 +80,7 @@ textarea{height:200px;padding:14px 16px;resize:vertical;margin-top:4px}
 .ok.show{display:block}
 .ok strong{display:block;font-size:1.25rem}
 
-/* ===== الفوتر ===== */
+/* الفوتر */
 footer[hidden]{display:none}
 footer{background:var(--navy);color:#dcd8ff}
 .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px;padding-bottom:32px}
@@ -90,10 +90,10 @@ footer a{color:#fff}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 
-/* =====================================================
-   الجوال (أقل من 760px): كل شي بعمود واحد
-   ترتيب الصفحة: الشعار ← النص والزر ← النمط بعرض الشاشة كامل
-   ===================================================== */
+/* 
+الجوال (أقل من 760px): كل شي بعمود واحد
+ترتيب الصفحة: الشعار ← النص والزر ← النمط بعرض الشاشة كامل
+ */
 @media (max-width:760px){
   .bar{padding-top:20px;padding-bottom:14px}
   .logo img{height:60px}

@@ -1,7 +1,7 @@
 // ===== إرسال القصة إلى الإيميل =====
 // حطي هون رابط خدمة الإيميل (مثلاً Formspree) أو رابط الباك إند تبعك.
-// إذا تُرك فاضي: الصفحة بتشتغل بوضع التجربة ولا ترسل شي.
-var ENDPOINT = ""; // مثال: "https://formspree.io/f/xxxxxxx"
+// إذا تُرك فاضي: الصفحة بشتغل بوضع التجربة ولا ترسل شي.
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbwiDsAQT9HTvTvIwYs3_UN6FOESVPyX6Uas0VXCF75GUcOD4SoGSyRADX--xSwfxqAZ-Q/exec";
 
 var f = document.getElementById("f");
 var err = document.getElementById("err");
@@ -31,9 +31,7 @@ f.addEventListener("submit", function (e) {
     if (!fields[i].value.trim()) { fail(fields[i], "عبّي كل الحقول لو سمحت."); return; }
   }
   if (!f.social.checkValidity()) { fail(f.social, "الرابط لازم يبدأ بـ https://"); return; }
-  // خانة الموافقة اختيارية: إذا مو موجودة بالـ HTML ما في تحقق منها
-  if (f.consent && !f.consent.checked) { fail(f.consent, "لازم توافق على النشر والتواصل حتى نقدر نستلم قصتك."); return; }
-
+  
   var data = Object.fromEntries(new FormData(f).entries());
   btn.disabled = true;
 
@@ -45,16 +43,12 @@ f.addEventListener("submit", function (e) {
   }
 
   if (!ENDPOINT) { done(); return; } // وضع التجربة
-
-  fetch(ENDPOINT, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "Accept": "application/json" },
-    body: JSON.stringify(data)
-  })
-    .then(function (r) { if (!r.ok) throw 0; done(); })
+  fetch(ENDPOINT, { method: "POST", body: JSON.stringify(data) })
+    .then(function (r) { return r.json(); })
+    .then(function (res) { if (!res.success) throw 0; done(); })
     .catch(function () {
       btn.disabled = false;
-      err.textContent = "ما انرسلت القصة. جرّب مرة تانية بعد شوي.";
+      err.textContent = "ما انرسلت القصة. جرّبي مرة تانية بعد شوي.";
     });
 });
 
