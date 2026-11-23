@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- الصفحة الرئيسية: الشعار + العنوان + الزر + النمط -->
+  <!-- ========== الصفحة الرئيسية: الشعار + العنوان + الزر + النمط ========== -->
   <header class="top">
     <div class="wrap bar">
       <div class="logo"><img src="images/logo.svg" alt="سند الشباب"></div>
@@ -18,7 +18,7 @@
     <div class="wrap hero">
       <div class="txt">
         <h1>قصتك بتفرق مع غيرك</h1>
-        <p class="lead">إذا كنت من مستفيدي سند، خبرنا كيف كانت رحلتك وشو تغيّر. قصتك بتلهم شب أو شابة غيرك يبدأ.</p>
+        <p class="lead">إذا كنت من مستفيدي سند، خبّرنا كيف كانت رحلتك وشو تغيّر. قصتك بتلهم شب أو شابة غيرك يبدأ.</p>
         <button type="button" class="btn" id="open">شارك قصة النجاح</button>
       </div>
       <div class="art" aria-hidden="true"></div>
@@ -26,7 +26,7 @@
   </header>
 
 
-  <!--لفورم مخفي لحد ما المستفيد يضغط على الزرh-->
+  <!-- ========== الفورم (مخفي لحد ما المستفيد يضغط على الزر) ========== -->
   <main id="share" hidden>
     <div class="wrap narrow">
       <h2 class="sec">شارك قصة نجاحك</h2>
@@ -92,24 +92,27 @@
           <textarea id="story" name="story" maxlength="1500" required></textarea>
           <div class="count"><span id="n">0</span> / 1500</div>
         </section>
+        <!-- حقل فخ للبوتات: الإنسان ما بيشوفو، والبوت بيعبّيه -->
+        <div class="hp" aria-hidden="true"><input type="search" name="website" tabindex="-1" autocomplete="off"></div>
 
- 
         <p class="err" id="err" role="alert"></p>
         <button class="btn send" id="send" type="submit">أرسل قصتي</button>
       </form>
-
     </div>
   </main>
 
-<!-- ========== شاشة الشكر (بتظهر لحالها بعد الإرسال) ========== -->
-<section class="thanks" id="thanks" hidden>
-  <div>
-    <img class="check" src="images/icon-check.svg" alt="">
-    <h2>وصلتنا قصتك. شكراً لمشاركتك!</h2>
-    <p>رح نتواصل معك على رقم الموبايل إذا احتجنا شي.</p>
-  </div>
-</section>
-  <!--  الفوتر (مخفي مثل الفورم)  -->
+
+  <!-- ========== شاشة الشكر (بتظهر لحالها بعد الإرسال) ========== -->
+  <section class="thanks" id="thanks" hidden>
+    <div>
+      <img class="check" src="images/icon-check.svg" alt="">
+      <h2>وصلتنا قصتك. شكراً لمشاركتك!</h2>
+      <p>رح نتواصل معك على رقم الموبايل إذا احتجنا شي.</p>
+    </div>
+  </section>
+
+
+  <!-- ========== الفوتر (مخفي مثل الفورم) ========== -->
   <footer id="foot" hidden>
     <div class="wrap foot">
       <div class="logo small"><img src="images/logo.svg" alt="سند الشباب"></div>
