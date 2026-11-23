@@ -1,12 +1,12 @@
-// ===== إرسال القصة إلى الإيميل (عن طريق Google Apps Script) =====
-// الصقي هون رابط Apps Script (بينتهي بـ /exec). إذا تُرك فاضي: الصفحة بتشتغل بوضع التجربة ولا ترسل شي.
-var ENDPOINT = "https://script.google.com/macros/s/AKfycbwiDsAQT9HTvTvIwYs3_UN6FOESVPyX6Uas0VXCF75GUcOD4SoGSyRADX--xSwfxqAZ-Q/exec";
+// ===== إرسال القصة إلى الإيميل =====
+// رابط الإرسال موجود بملف config.js (متغيّر اسمو ENDPOINT)
 
 var COOLDOWN_MS = 60000; // لازم يمرّ دقيقة بين قصة وقصة من نفس الجهاز
 
 var f = document.getElementById("f");
 var err = document.getElementById("err");
 var btn = document.getElementById("send");
+var sendText = btn.textContent; // نص الزر الأصلي
 var story = document.getElementById("story");
 var openedAt = Date.now(); // وقت فتح الفورم (بنستعملو لكشف البوتات السريعة)
 
@@ -17,6 +17,13 @@ story.addEventListener("input", function () {
 
 // إزالة الإطار الأحمر أول ما المستخدم يكتب
 f.addEventListener("input", function (e) { e.target.classList.remove("bad"); });
+
+function setSending(on) {
+  btn.disabled = on;
+  btn.classList.toggle("loading", on);
+  btn.textContent = on ? "عم نرسل قصتك..." : sendText;
+  f.classList.toggle("sending", on);
+}
 
 function fail(el, msg) {
   err.textContent = msg;
@@ -48,7 +55,8 @@ f.addEventListener("submit", function (e) {
 
   var data = Object.fromEntries(new FormData(f).entries());
   data.took = Date.now() - openedAt; // كم ميلي ثانية مرّت لحد ما أرسل
-  btn.disabled = true;
+  // حالة "عم نرسل": الزر بيعرض دوّارة والفورم بيتعتّم، حتى المستفيد يعرف إنو الإرسال شغّال
+  setSending(true);
 
   function done() {
     // بعد الإرسال: بنخفي كل شي وبنظهر شاشة الشكر بس
@@ -59,20 +67,21 @@ f.addEventListener("submit", function (e) {
     window.scrollTo(0, 0);
   }
 
-  if (!ENDPOINT) { done(); return; } // وضع التجربة
+  var url = window.ENDPOINT || "";
+  if (!url) { done(); return; } // وضع التجربة
 
   // ملاحظة: ما منحط headers لأنو Google بيرفض الطلب إذا جا بنوع JSON
-  fetch(ENDPOINT, { method: "POST", body: JSON.stringify(data) })
+  fetch(url, { method: "POST", body: JSON.stringify(data) })
     .then(function (r) { return r.json(); })
     .then(function (res) {
       if (res.success) { markSent(); done(); return; }
-      btn.disabled = false;
+      setSending(false);
       err.textContent = res.limited
         ? "وصلتي للحد الأقصى من المشاركات اليوم. جرّبي بكرا."
         : "ما انرسلت القصة. جرّب مرة تانية بعد شوي.";
     })
     .catch(function () {
-      btn.disabled = false;
+      setSending(false);
       err.textContent = "ما انرسلت القصة. جرّب مرة تانية بعد شوي.";
     });
 });

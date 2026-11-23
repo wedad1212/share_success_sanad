@@ -1,0 +1,1 @@
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbwiDsAQT9HTvTvIwYs3_UN6FOESVPyX6Uas0VXCF75GUcOD4SoGSyRADX--xSwfxqAZ-Q/exec";
