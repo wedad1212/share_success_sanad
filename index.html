@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- ========== الصفحة الرئيسية: الشعار + العنوان + الزر + النمط ========== -->
+  <!--  الصفحة الرئيسية: الشعار + العنوان + الزر + النمط -->
   <header class="top">
     <div class="wrap bar">
       <div class="logo"><img src="images/logo.svg" alt="سند الشباب"></div>
@@ -19,7 +19,7 @@
     <div class="wrap hero">
       <div class="txt">
         <h1>قصتك بتفرق مع غيرك</h1>
-        <p class="lead">إذا كنت من مستفيدي سند، خبّرنا كيف كانت رحلتك وشو تغيّر. قصتك بتلهم شب أو شابة غيرك يبدأ.</p>
+        <p class="lead">إذا كنت من مستفيدي سند، خبرنا كيف كانت رحلتك وشو تغير. قصتك بتلهم شب أو شابة غيرك يبدأ.</p>
         <button type="button" class="btn" id="open">شارك قصة النجاح</button>
       </div>
       <div class="art" aria-hidden="true"></div>
@@ -27,7 +27,7 @@
   </header>
 
 
-  <!-- ========== الفورم (مخفي لحد ما المستفيد يضغط على الزر) ========== -->
+  <!-- الفورم (مخفي لحد ما المستفيد يضغط على الزر)  -->
   <main id="share" hidden>
     <div class="wrap narrow">
       <h2 class="sec">شارك قصة نجاحك</h2>
@@ -35,11 +35,11 @@
 
       <form id="f" novalidate>
 
-        <!-- الخطوة 1: المعلومات الشخصية -->
+        <!-- الخطوة الأولى المعلومات الشخصية -->
         <section class="card">
           <div class="ch">
             <i class="num">1</i>
-            <div><h3>عرّفنا عليك</h3><p>معلوماتك بتساعدنا نتواصل معك.</p></div>
+            <div><h3>عرفنا عليك</h3><p>معلوماتك بتساعدنا نتواصل معك.</p></div>
           </div>
 
           <div class="grid">
@@ -47,7 +47,7 @@
             <label for="name">الاسم الثلاثي</label>
             <div class="in">
               <img class="ic" src="images/icon-user.svg" alt="">
-              <input id="name" name="name" type="text" autocomplete="name" placeholder="مثال: أحمد محمد العلي" required>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="مثال: وداد محمد خير الغفري" required>
             </div>
           </div>
           <div>
@@ -82,18 +82,18 @@
           </div>
         </section>
 
-        <!-- الخطوة 2: القصة -->
+        <!-- الخطوة الثانية القصة -->
         <section class="card">
           <div class="ch">
             <i class="num">2</i>
             <div><h3>رحلتك مع سند الشباب</h3><p>احكي بكلماتك، مهما كانت القصة بسيطة.</p></div>
           </div>
 
-          <label for="story">خبّرنا شو التحدي يلي كنت عم تواجهو؟ وكيف قدرنا نكون سندك فيه؟ وهل هالتغيير وصلك لهدفك ورؤيتك؟</label>
+          <label for="story">خبرنا شو التحدي يلي كنت عم تواجهو؟ وكيف قدرنا نكون سندك فيه؟ وهل هالتغيير وصلك لهدفك ورؤيتك؟</label>
           <textarea id="story" name="story" maxlength="1500" required></textarea>
           <div class="count"><span id="n">0</span> / 1500</div>
         </section>
-        <!-- حقل فخ للبوتات: الإنسان ما بيشوفو، والبوت بيعبّيه -->
+        <!-- حقل فخ للبوتات الإنسان ما بيشوفو، والبوت بيعبيه -->
         <div class="hp" aria-hidden="true"><input type="search" name="website" tabindex="-1" autocomplete="off"></div>
 
         <p class="err" id="err" role="alert"></p>
@@ -103,7 +103,7 @@
   </main>
 
 
-  <!-- ========== شاشة الشكر (بتظهر لحالها بعد الإرسال) ========== -->
+  <!--  (شاشة الشكر (بتظهر لحالها بعد الإرسال -->
   <section class="thanks" id="thanks" hidden>
     <div>
       <img class="check" src="images/icon-check.svg" alt="">
@@ -113,7 +113,7 @@
   </section>
 
 
-  <!-- ========== الفوتر (مخفي مثل الفورم) ========== -->
+  <!--  الفوتر (مخفي مثل الفورم)  -->
   <footer id="foot" hidden>
     <div class="wrap foot">
       <div class="logo small"><img src="images/logo.svg" alt="سند الشباب"></div>

@@ -1,5 +1,5 @@
-// ===== إرسال القصة إلى الإيميل =====
-// رابط الإرسال موجود بملف config.js (متغيّر اسمو ENDPOINT)
+// إرسال القصة إلى الإيميل
+
 
 var COOLDOWN_MS = 60000; // لازم يمرّ دقيقة بين قصة وقصة من نفس الجهاز
 
@@ -44,18 +44,16 @@ f.addEventListener("submit", function (e) {
     if (!fields[i].value.trim()) { fail(fields[i], "عبّي كل الحقول لو سمحت."); return; }
   }
   if (!f.social.checkValidity()) { fail(f.social, "الرابط لازم يبدأ بـ https://"); return; }
-  // خانة الموافقة اختيارية: إذا مو موجودة بالـ HTML ما في تحقق منها
-  if (f.consent && !f.consent.checked) { fail(f.consent, "لازم توافق على النشر والتواصل حتى نقدر نستلم قصتك."); return; }
+
 
   // منع الإرسال المتكرر من نفس الجهاز
   if (Date.now() - lastSent() < COOLDOWN_MS) {
-    err.textContent = "وصلتنا قصتك قبل شوي. استني دقيقة قبل ما ترسلي غيرها.";
+    err.textContent = "وصلتنا قصتك قبل شوي. استنى دقيقة قبل ما ترسل غيرها.";
     return;
   }
 
   var data = Object.fromEntries(new FormData(f).entries());
-  data.took = Date.now() - openedAt; // كم ميلي ثانية مرّت لحد ما أرسل
-  // حالة "عم نرسل": الزر بيعرض دوّارة والفورم بيتعتّم، حتى المستفيد يعرف إنو الإرسال شغّال
+  data.took = Date.now() - openedAt;
   setSending(true);
 
   function done() {
@@ -77,8 +75,8 @@ f.addEventListener("submit", function (e) {
       if (res.success) { markSent(); done(); return; }
       setSending(false);
       err.textContent = res.limited
-        ? "وصلتي للحد الأقصى من المشاركات اليوم. جرّبي بكرا."
-        : "ما انرسلت القصة. جرّب مرة تانية بعد شوي.";
+        ? "وصلت للحد الأقصى من المشاركات اليوم. جرب بكرا."
+        : "ما انرسلت القصة. جرب مرة تانية بعد شوي.";
     })
     .catch(function () {
       setSending(false);
@@ -86,11 +84,11 @@ f.addEventListener("submit", function (e) {
     });
 });
 
-// ===== زر "شارك قصة النجاح": بيطلّع الفورم المخفي وينزّل الصفحة لعندو =====
+
 var share = document.getElementById("share");
 document.getElementById("open").addEventListener("click", function () {
   share.hidden = false; // إظهار الفورم
-  document.getElementById("foot").hidden = false; // وإظهار الفوتر معو
+  document.getElementById("foot").hidden = false; 
   openedAt = Date.now();
   share.scrollIntoView({ behavior: "smooth" });
   setTimeout(function () { document.getElementById("name").focus({ preventScroll: true }); }, 600);
